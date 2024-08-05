@@ -1,5 +1,3 @@
-This is part one of assignment 5.1. 
-
 Given an integer x, return true if x is a palindrome, and false otherwise.
 
 	Example 1:
