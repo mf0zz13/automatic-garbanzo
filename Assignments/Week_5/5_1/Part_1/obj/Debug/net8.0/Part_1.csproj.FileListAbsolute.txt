@@ -1,0 +1,15 @@
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\bin\Debug\net8.0\Part_1.exe
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\bin\Debug\net8.0\Part_1.deps.json
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\bin\Debug\net8.0\Part_1.runtimeconfig.json
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\bin\Debug\net8.0\Part_1.dll
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\bin\Debug\net8.0\Part_1.pdb
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.AssemblyInfoInputs.cache
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.AssemblyInfo.cs
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.sourcelink.json
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.dll
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\refint\Part_1.dll
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.pdb
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\Part_1.genruntimeconfig.cache
+C:\Users\micha\Documents\MSSA\Assignments\Assignments\Week_5\5_1\Part_1\obj\Debug\net8.0\ref\Part_1.dll
