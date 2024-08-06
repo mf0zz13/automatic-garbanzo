@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|c:\\users\\micha\\onedrive\\documents\\c#_code\\mssa\\automatic-garbanzo\\assignments\\week_4\\4_2\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|c:\\users\\micha\\onedrive\\documents\\c#_code\\mssa\\automatic-garbanzo\\assignments\\week_4\\4_2\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|c:\\users\\micha\\onedrive\\documents\\c#_code\\mssa\\automatic-garbanzo\\assignments\\week_4\\4_2\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|c:\\users\\micha\\onedrive\\documents\\c#_code\\mssa\\automatic-garbanzo\\assignments\\week_4\\4_2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D2DFC44-F3C1-4DAA-9B27-55C113B06E55}|4_2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 456,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\LoginForm.cs [Design]",
+              "RelativeToolTip": "LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T20:38:09.391Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\Class1.cs",
+              "RelativeDocumentMoniker": "Class1.cs",
+              "ToolTip": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\Class1.cs",
+              "RelativeToolTip": "Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T21:14:18.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T21:12:53.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\automatic-garbanzo\\Assignments\\Week_4\\4_2\\LoginForm.cs",
+              "RelativeToolTip": "LoginForm.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAQwBgAAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T20:52:13.725Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
