@@ -1,0 +1,15 @@
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.AssemblyInfoInputs.cache
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.AssemblyInfo.cs
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.csproj.CoreCompileInputs.cache
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.sourcelink.json
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\bin\Debug\net8.0\Part_4.exe
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\bin\Debug\net8.0\Part_4.deps.json
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\bin\Debug\net8.0\Part_4.runtimeconfig.json
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\bin\Debug\net8.0\Part_4.dll
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\bin\Debug\net8.0\Part_4.pdb
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.dll
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\refint\Part_4.dll
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.pdb
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\Part_4.genruntimeconfig.cache
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_5\5_2\Part_4\obj\Debug\net8.0\ref\Part_4.dll
