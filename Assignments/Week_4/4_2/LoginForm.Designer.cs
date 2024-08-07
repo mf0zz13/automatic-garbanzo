@@ -32,12 +32,12 @@
             LoginTxt = new TextBox();
             Username_Box = new TextBox();
             Password_Box = new TextBox();
-            UserNameIcon = new PictureBox();
+            UserName_Icon = new PictureBox();
             Password_Icon = new PictureBox();
-            button1 = new Button();
+            Login_Button = new Button();
             CreateNewAccountTxt = new TextBox();
             ((System.ComponentModel.ISupportInitialize)MSSALogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)UserNameIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UserName_Icon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Password_Icon).BeginInit();
             SuspendLayout();
             // 
@@ -76,9 +76,12 @@
             Username_Box.Location = new Point(100, 200);
             Username_Box.Name = "Username_Box";
             Username_Box.Size = new Size(250, 41);
-            Username_Box.TabIndex = 2;
+            Username_Box.TabIndex = 1;
             Username_Box.Text = "Username";
             Username_Box.TextAlign = HorizontalAlignment.Center;
+            Username_Box.TextChanged += Username_Box_TextChanged;
+            Username_Box.Enter += Username_Box_Enter;
+            Username_Box.Leave += Username_Box_Leave;
             // 
             // Password_Box
             // 
@@ -89,43 +92,47 @@
             Password_Box.Location = new Point(100, 260);
             Password_Box.Name = "Password_Box";
             Password_Box.Size = new Size(250, 41);
-            Password_Box.TabIndex = 4;
+            Password_Box.TabIndex = 2;
             Password_Box.Text = "Password";
             Password_Box.TextAlign = HorizontalAlignment.Center;
+            Password_Box.TextChanged += Password_Box_TextChanged;
+            Password_Box.Enter += Password_Box_Enter;
+            Password_Box.Leave += Password_Box_Leave;
             // 
-            // UserNameIcon
+            // UserName_Icon
             // 
-            UserNameIcon.Enabled = false;
-            UserNameIcon.Image = Properties.Resources.Pngtree_user_icon_5097430;
-            UserNameIcon.Location = new Point(103, 201);
-            UserNameIcon.Name = "UserNameIcon";
-            UserNameIcon.Size = new Size(39, 39);
-            UserNameIcon.SizeMode = PictureBoxSizeMode.StretchImage;
-            UserNameIcon.TabIndex = 3;
-            UserNameIcon.TabStop = false;
+            UserName_Icon.Enabled = false;
+            UserName_Icon.Image = Properties.Resources.Pngtree_user_icon_5097430;
+            UserName_Icon.Location = new Point(103, 201);
+            UserName_Icon.Name = "UserName_Icon";
+            UserName_Icon.Size = new Size(39, 39);
+            UserName_Icon.SizeMode = PictureBoxSizeMode.StretchImage;
+            UserName_Icon.TabIndex = 3;
+            UserName_Icon.TabStop = false;
             // 
             // Password_Icon
             // 
             Password_Icon.Enabled = false;
             Password_Icon.Image = Properties.Resources.lockIcon;
-            Password_Icon.Location = new Point(103, 261);
+            Password_Icon.Location = new Point(105, 263);
             Password_Icon.Name = "Password_Icon";
-            Password_Icon.Size = new Size(39, 39);
+            Password_Icon.Size = new Size(35, 35);
             Password_Icon.SizeMode = PictureBoxSizeMode.StretchImage;
             Password_Icon.TabIndex = 5;
             Password_Icon.TabStop = false;
             // 
-            // button1
+            // Login_Button
             // 
-            button1.BackColor = Color.LightGray;
-            button1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.DimGray;
-            button1.Location = new Point(100, 320);
-            button1.Name = "button1";
-            button1.Size = new Size(250, 41);
-            button1.TabIndex = 6;
-            button1.Text = "LOGIN";
-            button1.UseVisualStyleBackColor = false;
+            Login_Button.BackColor = Color.LightGray;
+            Login_Button.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Login_Button.ForeColor = Color.DimGray;
+            Login_Button.Location = new Point(100, 320);
+            Login_Button.Name = "Login_Button";
+            Login_Button.Size = new Size(250, 41);
+            Login_Button.TabIndex = 0;
+            Login_Button.Text = "LOGIN";
+            Login_Button.UseVisualStyleBackColor = false;
+            Login_Button.Click += Login_Button_Click;
             // 
             // CreateNewAccountTxt
             // 
@@ -137,6 +144,7 @@
             CreateNewAccountTxt.Name = "CreateNewAccountTxt";
             CreateNewAccountTxt.Size = new Size(200, 16);
             CreateNewAccountTxt.TabIndex = 7;
+            CreateNewAccountTxt.TabStop = false;
             CreateNewAccountTxt.Text = "CREATE NEW ACCOUNT";
             CreateNewAccountTxt.TextAlign = HorizontalAlignment.Center;
             CreateNewAccountTxt.MouseClick += CreateNewAccountTxt_MouseClick;
@@ -150,17 +158,17 @@
             BackColor = Color.White;
             ClientSize = new Size(434, 461);
             Controls.Add(CreateNewAccountTxt);
-            Controls.Add(button1);
+            Controls.Add(Login_Button);
             Controls.Add(Password_Icon);
             Controls.Add(Password_Box);
-            Controls.Add(UserNameIcon);
+            Controls.Add(UserName_Icon);
             Controls.Add(Username_Box);
             Controls.Add(LoginTxt);
             Controls.Add(MSSALogo);
             Name = "LoginForm";
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)MSSALogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)UserNameIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UserName_Icon).EndInit();
             ((System.ComponentModel.ISupportInitialize)Password_Icon).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -169,12 +177,12 @@
         #endregion
 
         private PictureBox MSSALogo;
-        private TextBox LoginTxt;
-        private TextBox Username_Box;
-        private TextBox Password_Box;
-        private PictureBox UserNameIcon;
-        private PictureBox Password_Icon;
-        private Button button1;
-        private TextBox CreateNewAccountTxt;
+        public TextBox LoginTxt;
+        internal TextBox Username_Box;
+        internal TextBox Password_Box;
+        internal PictureBox UserName_Icon;
+        internal PictureBox Password_Icon;
+        internal Button Login_Button;
+        internal TextBox CreateNewAccountTxt;
     }
 }

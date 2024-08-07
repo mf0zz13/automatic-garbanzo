@@ -16,3 +16,5 @@ C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\We
 C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_4\4_2\obj\Debug\net8.0-windows\ref\4_2.dll
 C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_4\4_2\obj\Debug\net8.0-windows\_4_2.LoginForm.resources
 C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_4\4_2\obj\Debug\net8.0-windows\_4_2.Properties.Resources.resources
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_4\4_2\obj\Debug\net8.0-windows\_4_2.TeacherPortal.resources
+C:\Users\micha\OneDrive\Documents\C#_code\MSSA\automatic-garbanzo\Assignments\Week_4\4_2\obj\Debug\net8.0-windows\_4_2.LoginInstance.resources
