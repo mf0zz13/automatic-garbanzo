@@ -25,29 +25,38 @@
         static void Main(string[] args)
         {
             bool exit = false;
+            bool parseStatus = false;
+
             while (!exit)
             {
-                int numFlowers;
-                Console.WriteLine("This application will check to see if there is space to plant a flower in an array flowerbed");
-                Console.Write("Please enter a list consisting of 1's and 0's separted by commas: ");
-                int[] flowerBed = Console.ReadLine()
-                    .Split(',')
-                    .Where(x => Int32.TryParse(x, out _))
-                    .Select(Int32.Parse).ToArray();
-
-                Console.Write("How many flowers would you like to try and add?: ");
-                bool parseStatus = Int32.TryParse(Console.ReadLine(), out numFlowers);
                 try
                 {
-                    if (parseStatus == false) throw new IndexOutOfRangeException("Only numbers are accepted.");
-                }
-                catch (IndexOutOfRangeException e) { Console.WriteLine(e.Message); }
+                    int numFlowers;
+                    Console.WriteLine("This application will check to see if there is space to plant a flower in an array flowerbed");
+                    Console.Write("Please enter a list consisting of 1's and 0's separted by commas: ");
+                    string userInput = Console.ReadLine();
+                    int[] flowerBed = new int[userInput.Length];
+                    for (int i = 0; i < flowerBed.Length; i++)
+                    {
+                        int tempNum;
+                        
+                        parseStatus = Int32.TryParse(Convert.ToString(userInput[i]), out tempNum);
+                        if (parseStatus) flowerBed[i] = tempNum;
+                        else throw new InvalidOperationException("Please only input numbers");
+                    }
 
+                    Console.Write("How many flowers would you like to try and add?: ");
+                    parseStatus = Int32.TryParse(Console.ReadLine(), out numFlowers);
+
+                    if (parseStatus == false) throw new IndexOutOfRangeException("Only numbers are accepted.");
+                
                 Console.WriteLine(SpaceInFlowerBed(flowerBed, numFlowers));
                 Console.ReadKey();
                 Console.Clear();
                 exit = true;
                 }
+                catch (IndexOutOfRangeException e) { Console.WriteLine(e.Message); }
             }
         }
     }
+}

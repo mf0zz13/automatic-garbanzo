@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Assignments",
+    "\\Assignments\\Week_5",
+    "\\Assignments\\Week_5\\5_1\\Part_1",
+    "\\Assignments\\Week_5\\5_1\\Part_3",
+    "\\Assignments\\Week_5\\5_2",
+    "\\Assignments\\Week_5\\5_2\\Part_1",
+    "\\Assignments\\Week_5\\5_2\\Part_2",
+    "\\Assignments\\Week_5\\5_2\\Part_3",
+    "\\Assignments\\Week_5\\5_2\\Part_4"
   ],
-  "SelectedNode": "\\4_2.sln",
+  "SelectedNode": "\\Assignments\\Week_5\\5_2\\Part_3\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
