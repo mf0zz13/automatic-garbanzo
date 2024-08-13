@@ -79,13 +79,15 @@ namespace WeekSixAssignments
                         linkedList.Remove(RemoveHouse(ref linkedList));
                         break;
                     case 3:
+                        Search(ref linkedList);
                         break;
                     case 4:
+                        exit = true;
                         break;
                 }
             }
         }
-        #region Methods
+        #region Methods 6.1_1
         static House AddHouse()
         {
             string _houseNumber;
@@ -110,7 +112,7 @@ namespace WeekSixAssignments
                 Console.Write("Street Name: ");
                 _tempHouse.Address = Console.ReadLine();
 
-                Console.WriteLine("House Types(1 - Ranch, 2 - Colonial, 3 - Craftsman, 4 - Cottage, 5 - TownHouse, 6 - Condo");
+                Console.WriteLine("House Types(1 - Ranch, 2 - Colonial, 3 - Craftsman, 4 - Cottage, 5 - TownHouse, 6 - Condo)");
                 Console.Write("Please enter the number correlating to the house type: ");
                 enumParse = Int32.TryParse(Console.ReadLine(), out _houseType);
                 if (!enumParse) { Console.WriteLine("Invalid input"); continue; }
@@ -145,12 +147,11 @@ namespace WeekSixAssignments
         static int RemoveHouse(ref CustomLinkedList linkedList)
         {
             Node _currNode = linkedList.Head;
-            bool _validInput = false;
             int houseNumber = -1;
 
             Console.Clear();
             Console.WriteLine("Remove a House\n");
-            
+
             for (int i = 0; i < linkedList.Size; i++)
             {
                 Console.WriteLine($"{_currNode.Data.HouseNumber}, {_currNode.Data.Address}, {_currNode.Data.HouseType}");
@@ -158,18 +159,57 @@ namespace WeekSixAssignments
             }
 
             Console.WriteLine();
+
+            houseNumber = ValidateHouseNumber("Please enter the house number you would like to remove: ", ref linkedList);
+
+            return houseNumber;
+        }
+
+        static void Search(ref CustomLinkedList linkedList)
+        {
+            Node _currNode = linkedList.Head;
+            int houseNumber = -1;
+
+            Console.Clear();
+            Console.WriteLine("Search for a houses record");
+            houseNumber = ValidateHouseNumber("Please enter house number you would like to search: ", ref linkedList);
+            if (houseNumber == -1) { return; }
+            while (_currNode.Data.HouseNumber != houseNumber)
+            {
+                _currNode = _currNode.Next;
+            }
+
+            Console.WriteLine($"House Number: {_currNode.Data.HouseNumber}\nStreet: {_currNode.Data.Address}\nHouse Type: {_currNode.Data.HouseType}");
+            Console.WriteLine("Press any key to return");
+
+            Console.ReadKey();
+        }
+
+        static int ValidateHouseNumber(string prompt, ref CustomLinkedList linkedList)
+        {
+            bool _validInput = false;
+            int houseNumber = 0;
+
             while (!_validInput)
             {
-                Console.Write("Please enter the house number you would like to remove: ");
+                Console.Write(prompt);
                 string input = Console.ReadLine();
+                if(input.ToUpper() == "EXIT") { return -1; }
                 _validInput = Int32.TryParse(input, out houseNumber);
                 if (!_validInput) { Console.WriteLine("Invalid input"); continue; }
                 _validInput = linkedList.Search(houseNumber).IsInList;
                 if (!_validInput) { Console.WriteLine("Invalid input"); continue; }
-             }
+            }
             return houseNumber;
         }
         #endregion
+
+        public static void SixOneTwo()
+        {
+            Console.WriteLine("This is a demonstration of the LinkedList<T> class");
+
+            Console.WriteLine()
+        }
 
     }
 
@@ -337,6 +377,7 @@ namespace WeekSixAssignments
 
         public void Remove(int houseNumber)
         {
+            if (houseNumber == -1) { return; }
             if (_size == 0) { throw new IndexOutOfRangeException("List is Empty."); }
             else if (_size == 1) { RemoveFirst(); return; }
             else
@@ -352,8 +393,8 @@ namespace WeekSixAssignments
                     if (_count == _size) { throw new IndexOutOfRangeException("The house number entered is not in the list."); }
                     _count++;
                 }
-                if(_count == 0) { RemoveFirst(); }
-                if (_currNode.Next == null) { RemoveLast(); }
+                if (_count == 0) { RemoveFirst(); }
+                if (_currNode.Next == null) { RemoveLast(); return; }
                 else
                 {
                     _priorNode.Next = _currNode.Next;
@@ -373,7 +414,7 @@ namespace WeekSixAssignments
             while (_currNode.Data.HouseNumber != houseNumber)
             {
                 _currNode = _currNode.Next;
-                if(_index == _size) { return (false, -1); }
+                if (_index == _size) { return (false, -1); }
                 _index++;
             }
             return (true, _index);
