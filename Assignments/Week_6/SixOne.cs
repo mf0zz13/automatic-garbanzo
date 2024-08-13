@@ -194,7 +194,7 @@ namespace WeekSixAssignments
             {
                 Console.Write(prompt);
                 string input = Console.ReadLine();
-                if(input.ToUpper() == "EXIT") { return -1; }
+                if (input.ToUpper() == "EXIT") { return -1; }
                 _validInput = Int32.TryParse(input, out houseNumber);
                 if (!_validInput) { Console.WriteLine("Invalid input"); continue; }
                 _validInput = linkedList.Search(houseNumber).IsInList;
@@ -206,9 +206,54 @@ namespace WeekSixAssignments
 
         public static void SixOneTwo()
         {
-            Console.WriteLine("This is a demonstration of the LinkedList<T> class");
+            int[] nums = new int[6];
+            int[] nums2 = new int[3];
+            int[] nums3 = new int[6];
+            Console.Clear();
 
-            Console.WriteLine()
+            Console.WriteLine("This is a demonstration of the LinkedList<T> class");
+            Console.WriteLine();
+            Console.WriteLine("LinkedList<int> ll = new();");
+            LinkedList<int> ll = new();
+            Console.WriteLine("ll.AddFirst(1);");
+            ll.AddFirst(1);
+            Console.WriteLine("ll.AddLast(10);");
+            ll.AddLast(10);
+            Console.WriteLine("ll.AddFirst(2);");
+            ll.AddFirst(2);
+            Console.WriteLine("ll.AddLast(9);");
+            ll.AddLast(9);
+            Console.WriteLine("ll.AddBefore(ll.Last, 15);");
+            ll.AddBefore(ll.Last, 15);
+            Console.WriteLine("ll.AddAfter(ll.First, 5);");
+            ll.AddAfter(ll.First, 5);
+            Console.WriteLine("ll.CopyTo(nums, 0);");
+            ll.CopyTo(nums, 0);
+            Console.WriteLine("foreach (int num in nums) { Console.WriteLine(num); }");
+            Console.WriteLine();
+            foreach (int num in nums) { Console.WriteLine(num); }
+            Console.WriteLine();
+            Console.WriteLine("ll.RemoveFirst();");
+            ll.RemoveFirst();
+            Console.WriteLine("ll.RemoveLast();");
+            ll.RemoveLast();
+            Console.WriteLine("ll.Remove(10);");
+            ll.Remove(10);
+            Console.WriteLine("ll.CopyTo(nums2, 0);");
+            ll.CopyTo(nums2, 0);
+            Console.WriteLine("foreach (int num in nums2) { Console.WriteLine(num); }");
+            Console.WriteLine();
+            foreach (int num in nums2) { Console.WriteLine(num); }
+            Console.WriteLine();
+            Console.WriteLine("ll.Clear();");
+            ll.Clear();
+            Console.WriteLine("Console.WriteLine(ll.Count);");
+            Console.WriteLine(ll.Count);
+            Console.WriteLine();
+            Console.WriteLine("Hit any key to exit");
+            Console.ReadKey();
+
+
         }
 
     }
