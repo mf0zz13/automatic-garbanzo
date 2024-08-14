@@ -55,7 +55,7 @@ namespace WeekSixAssignments
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("1 - Part One\n2 - Part Two\n3 - Part Three");
                 Console.Write("Please enter a number correlating to a part or \"exit\" to exit: ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine().ToUpper();
                 int validatedInput = validateInput(input, 3);
                 switch (validatedInput)
                 {
@@ -68,10 +68,49 @@ namespace WeekSixAssignments
                     case 3:
                         SixOne.SixOneThree();
                         break;
+                    case -1:
+                        return;
+                        break;
                 }
             }
             catch (Exception e)
-            { }
+            { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        public static void AssignmentSixTwoDisplay()
+        {
+            try
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(@"+============================================================================================+");
+                Console.WriteLine(@"|     _            _                                  _     ____  _      _____               |");
+                Console.WriteLine(@"|    / \   ___ ___(_) __ _ _ __  _ __ ___   ___ _ __ | |_  / ___|(_)_  _|_   _|_      _____  |");
+                Console.WriteLine(@"|   / _ \ / __/ __| |/ _` | '_ \| '_ ` _ \ / _ \ '_ \| __| \___ \| \ \/ / | | \ \ /\ / / _ \ |");
+                Console.WriteLine(@"|  / ___ \\__ \__ \ | (_| | | | | | | | | |  __/ | | | |_   ___) | |>  < _| |  \ V  V / (_) ||");
+                Console.WriteLine(@"| /_/   \_\___/___/_|\__, |_| |_|_| |_| |_|\___|_| |_|\__| |____/|_/_/\_(_)_|   \_/\_/ \___/ |");
+                Console.WriteLine(@"|                    |___/                                                                   |");
+                Console.WriteLine(@"+============================================================================================+");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("1 - Part One\n2 - Part Two");
+                Console.Write("Please enter a number correlating to a part or \"exit\" to exit: ");
+                string input = Console.ReadLine().ToUpper();
+                int validatedInput = validateInput(input, 3);
+                switch (validatedInput)
+                {
+                    case 1:
+                        SixTwo.SixTwoOne();
+                        break;
+                    case 2:
+                        break;
+                    case -1:
+                        return;
+                        break;
+                }
+            }
+            catch (Exception e)
+            { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private static int validateInput(string input, int range)
@@ -86,6 +125,19 @@ namespace WeekSixAssignments
 
             if (userInputNumber < 1 || userInputNumber > range) { throw new ArgumentOutOfRangeException("Number must be between 1 and 5"); }
             else { return userInputNumber; }
+        }
+
+
+        public static void AssignemntSixTwoOneTitle()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("+===========================================================================+\r\n" +
+                "| ____  _      _____                 ____            _      ___             |\r\n" +
+                "|/ ___|(_)_  _|_   _|_      _____   |  _ \\ __ _ _ __| |_   / _ \\ _ __   ___ |\r\n" +
+                "|\\___ \\| \\ \\/ / | | \\ \\ /\\ / / _ \\  | |_) / _` | '__| __| | | | | '_ \\ / _ \\|\r\n" +
+                "| ___) | |>  < _| |  \\ V  V / (_) | |  __/ (_| | |  | |_  | |_| | | | |  __/|\r\n" +
+                "||____/|_/_/\\_(_)_|   \\_/\\_/ \\___/  |_|   \\__,_|_|   \\__|  \\___/|_| |_|\\___||\r\n" +
+                "+===========================================================================+");
         }
     }
 }

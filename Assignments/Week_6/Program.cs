@@ -15,6 +15,9 @@ namespace WeekSixAssignments
                     case 1:
                         Displays.AssignmentSixOneDisplay();
                         break;
+                    case 2:
+                        Displays.AssignmentSixTwoDisplay();
+                        break;
                     case -1:
                         exit = true;
                         break;

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace WeekSixAssignments
 {
@@ -211,6 +210,17 @@ namespace WeekSixAssignments
             int[] nums3 = new int[6];
             Console.Clear();
 
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(@"+============================================================================+");
+            Console.WriteLine(@"| ____  _        ___               ____            _     _____               |");
+            Console.WriteLine(@"|/ ___|(_)_  __ / _ \ _ __   ___  |  _ \ __ _ _ __| |_  |_   _|_      _____  |");
+            Console.WriteLine(@"|\___ \| \ \/ /| | | | '_ \ / _ \ | |_) / _` | '__| __|   | | \ \ /\ / / _ \ |");
+            Console.WriteLine(@"| ___) | |>  < | |_| | | | |  __/ |  __/ (_| | |  | |_    | |  \ V  V / (_) ||");
+            Console.WriteLine(@"||____/|_/_/\_(_)___/|_| |_|\___| |_|   \__,_|_|   \__|   |_|   \_/\_/ \___/ |");
+            Console.WriteLine(@"+============================================================================+");
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Console.WriteLine("This is a demonstration of the LinkedList<T> class");
             Console.WriteLine();
             Console.WriteLine("LinkedList<int> ll = new();");
@@ -261,6 +271,16 @@ namespace WeekSixAssignments
             while (!validInput)
             {
                 Console.Clear();
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(@"+==================================================================================+");
+                Console.WriteLine(@"| ____  _        ___               ____            _     _____ _                   |");
+                Console.WriteLine(@"|/ ___|(_)_  __ / _ \ _ __   ___  |  _ \ __ _ _ __| |_  |_   _| |__  _ __ ___  ___ |");
+                Console.WriteLine(@"|\___ \| \ \/ /| | | | '_ \ / _ \ | |_) / _` | '__| __|   | | | '_ \| '__/ _ \/ _ \|");
+                Console.WriteLine(@"| ___) | |>  < | |_| | | | |  __/ |  __/ (_| | |  | |_    | | | | | | | |  __/  __/|");
+                Console.WriteLine(@"||____/|_/_/\_(_)___/|_| |_|\___| |_|   \__,_|_|   \__|   |_| |_| |_|_|  \___|\___||");
+                Console.WriteLine(@"+==================================================================================+");
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Please enter a set of numbers separated by commas:");
                 string input = Console.ReadLine();
 
