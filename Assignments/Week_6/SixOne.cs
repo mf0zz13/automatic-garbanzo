@@ -252,10 +252,62 @@ namespace WeekSixAssignments
             Console.WriteLine();
             Console.WriteLine("Hit any key to exit");
             Console.ReadKey();
-
-
         }
 
+        public static void SixOneThree()
+        {
+            int[] numArray = new int[0];
+            bool validInput = false;
+            while (!validInput)
+            {
+                Console.Clear();
+                Console.WriteLine("Please enter a set of numbers separated by commas:");
+                string input = Console.ReadLine();
+
+                try { numArray = input.Split(',').Select(Int32.Parse).ToArray(); validInput = true; }
+                catch { Console.WriteLine("Please only enter numbers separated by commas"); }
+            }
+            Console.Write("Input: ");
+            OutputArray(numArray);
+
+            for(int i = 0; i < numArray.Length; i++)
+            {
+               switch (numArray[i])
+                {
+                    case 0:
+                        int tempCount = i;
+                        while (numArray[tempCount] == 0)
+                        {
+                            tempCount++;
+                            if(tempCount == numArray.Length) { break; }
+                        }
+                        if (tempCount == numArray.Length) { break; }
+                        numArray[i] = numArray[tempCount];
+                        numArray[tempCount] = 0;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.Write("Output: ");
+            OutputArray(numArray);
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
+        }
+
+        #region Methods 6.1_3
+        static void OutputArray(int[] array)
+        {
+            int counter = 0;
+            foreach(int item in array)
+            {
+                if(counter == 0) { Console.Write($"[{item}, "); }
+                else if(counter == array.Length - 1) { Console.WriteLine($"{item}]"); }
+                else { Console.Write($"{item}, "); }
+                counter++;
+            }
+        }
+        #endregion
     }
 
     public class Node

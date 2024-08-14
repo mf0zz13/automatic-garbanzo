@@ -65,6 +65,9 @@ namespace WeekSixAssignments
                     case 2:
                         SixOne.SixOneTwo();
                         break;
+                    case 3:
+                        SixOne.SixOneThree();
+                        break;
                 }
             }
             catch (Exception e)
