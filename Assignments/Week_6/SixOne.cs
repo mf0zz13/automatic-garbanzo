@@ -285,21 +285,26 @@ namespace WeekSixAssignments
                 string input = Console.ReadLine();
 
                 try { numArray = input.Split(',').Select(Int32.Parse).ToArray(); validInput = true; }
-                catch { Console.WriteLine("Please only enter numbers separated by commas"); }
+                catch
+                {
+                    Console.WriteLine("Please only enter numbers separated by commas");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
             }
             Console.Write("Input: ");
             OutputArray(numArray);
 
-            for(int i = 0; i < numArray.Length; i++)
+            for (int i = 0; i < numArray.Length; i++)
             {
-               switch (numArray[i])
+                switch (numArray[i])
                 {
                     case 0:
                         int tempCount = i;
                         while (numArray[tempCount] == 0)
                         {
                             tempCount++;
-                            if(tempCount == numArray.Length) { break; }
+                            if (tempCount == numArray.Length) { break; }
                         }
                         if (tempCount == numArray.Length) { break; }
                         numArray[i] = numArray[tempCount];
@@ -319,10 +324,10 @@ namespace WeekSixAssignments
         static void OutputArray(int[] array)
         {
             int counter = 0;
-            foreach(int item in array)
+            foreach (int item in array)
             {
-                if(counter == 0) { Console.Write($"[{item}, "); }
-                else if(counter == array.Length - 1) { Console.WriteLine($"{item}]"); }
+                if (counter == 0) { Console.Write($"[{item}, "); }
+                else if (counter == array.Length - 1) { Console.WriteLine($"{item}]"); }
                 else { Console.Write($"{item}, "); }
                 counter++;
             }

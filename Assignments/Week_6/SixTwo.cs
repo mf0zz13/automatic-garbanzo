@@ -49,6 +49,61 @@ namespace WeekSixAssignments
             Console.ReadKey();
         }
 
+        public static void SixTwoTwo()
+        {
+            int[] inputArray;
+            bool validInput = false;
+            while (!validInput)
+            {
+                try
+                {
+                    Console.Clear();
+                    Displays.AssignementSixTwoTwoTitle();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Please enter teh numbers you would like to add to the array separated by commas");
+                    inputArray = Console.ReadLine().Split(',').Select(Int32.Parse).ToArray();
+                    validInput = true;
+
+                    CalculateProducts(inputArray);
+                    Console.Write($"[{inputArray[0]}, ");
+                    for (int i = 1; i < inputArray.Length - 1; i++)
+                    {
+                        Console.Write($"{inputArray[i]}, ");
+                    }
+                    Console.WriteLine($"{inputArray[inputArray.Length - 1]}]");
+                    Console.WriteLine("Press any key to exit");
+                    Console.ReadKey();
+                    
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Enter only numbers separated by commas");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        public static void CalculateProducts(int[] numArray)
+        {
+            Stack<int> numbersForwards = new Stack<int>();
+
+            int priorSum = 1;
+            for (int i = 0; i < numArray.Length; i++)
+            {
+                numbersForwards.Push(priorSum);
+                priorSum *= numArray[i];
+            }
+
+            priorSum = 1;
+            for (int i = numArray.Length - 1; i >= 0; i--)
+            {
+                int tempNum = numArray[i];
+                numArray[i] = numbersForwards.Pop() * priorSum;
+                priorSum *= tempNum;
+            }
+        }
+
         public static int ValidateNumInput(string input)
         {
             int returnVal;
