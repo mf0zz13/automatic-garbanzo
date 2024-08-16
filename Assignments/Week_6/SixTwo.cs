@@ -114,6 +114,8 @@ namespace WeekSixAssignments
             while (!validInput)
             {
                 Console.WriteLine("Please enter a number");
+                Console.Write("Input not recognized please try again: ");
+                input = Console.ReadLine();
                 validInput = Int32.TryParse(input, out returnVal);
             }
 
