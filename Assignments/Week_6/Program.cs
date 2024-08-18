@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace WeekSixAssignments
 {
@@ -63,60 +64,65 @@ namespace WeekSixAssignments
 
             while (!exit)
             {
-                userInput = Displays.Display(option);
-                switch (userInput)
+                try
                 {
-                    case 1:
-                        switch (option)
-                        {
-                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_One); break;
-                            case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_One); break;
-                            case Displays.Menus.SixOne_One: AssignmentSixOne_One(1); break;
-                            case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_One); break;
-                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(1); break;
-                            case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(1); break;
-                            case Displays.Menus.SixChallenges: MenuSwitch(Displays.Menus.SixChallenge_One); AssignmentSixChallenge_One(); break;
-                        }
-                        break;
-                    case 2:
-                        switch (option)
-                        {
-                            case Displays.Menus.SixOne_One: AssignmentSixOne_One(2); break;
-                            case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Two); AssignmentSixOne_Two(); break;
-                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_Two); break;
-                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(2); break;
-                            case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_Two); AssignmentSixTwo_Two(); break;
-                            case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(2); break;
-                        }
-                        break;
-                    case 3:
-                        switch (option)
-                        {
-                            case Displays.Menus.SixOne_One: AssignmentSixOne_One(3); break;
-                            case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Three); AssignmentSixOne_Three(); break;
-                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(3); break;
-                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixThree); break;
-                        }
-                        break;
-                    case 4:
-                        switch (option)
-                        {
-                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(4); break;
-                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixFour); AssignmentSixFour(); break;
-                        }
-                        break;
-                    case 5:
-                        switch (option)
-                        {
-                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixChallenges); break;
-                        }
-                        break;
-                    case -1:
-                    exit = true;
-                    break;
-                }
+                    userInput = Displays.Display(option);
+                    switch (userInput)
+                    {
+                        case 1:
+                            switch (option)
+                            {
+                                case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_One); break;
+                                case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_One); break;
+                                case Displays.Menus.SixOne_One: AssignmentSixOne_One(1); break;
+                                case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_One); break;
+                                case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(1); break;
+                                case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(1); break;
+                                case Displays.Menus.SixChallenges: MenuSwitch(Displays.Menus.SixChallenge_One); AssignmentSixChallenge_One(); break;
+                            }
+                            break;
+                        case 2:
+                            switch (option)
+                            {
+                                case Displays.Menus.SixOne_One: AssignmentSixOne_One(2); break;
+                                case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Two); AssignmentSixOne_Two(); break;
+                                case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_Two); break;
+                                case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(2); break;
+                                case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_Two); AssignmentSixTwo_Two(); break;
+                                case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(2); break;
+                                case Displays.Menus.SixChallenges: MenuSwitch(Displays.Menus.SixChallenge_Two); AssignmentSixChallenge_Two(); break;
+                            }
+                            break;
+                        case 3:
+                            switch (option)
+                            {
+                                case Displays.Menus.SixOne_One: AssignmentSixOne_One(3); break;
+                                case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Three); AssignmentSixOne_Three(); break;
+                                case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(3); break;
+                                case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixThree); break;
+                            }
+                            break;
+                        case 4:
+                            switch (option)
+                            {
+                                case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(4); break;
+                                case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixFour); AssignmentSixFour(); break;
+                            }
+                            break;
+                        case 5:
+                            switch (option)
+                            {
+                                case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixChallenges); break;
+                            }
+                            break;
+                        case -1:
+                            exit = true;
+                            break;
+                    }
+                } catch (Exception e) { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
+
         #region SixOne
         static void AssignmentSixOne_One(int userSelection)
         {
@@ -533,7 +539,7 @@ namespace WeekSixAssignments
         #region Challenges
         static void AssignmentSixChallenge_One()
         {
-            int[] userInput = new int[9];
+            int[] userInput = new int[10];
             Dictionary<int, int> nums = new Dictionary<int, int>();
             int currVal = 0;
             Console.WriteLine("Enter a nine digit array that has every element apperaing twice except one");
@@ -555,7 +561,42 @@ namespace WeekSixAssignments
 
         static void AssignmentSixChallenge_Two()
         {
+            Console.Write("How many items would you like to enter in the array: ");
+            int arrayLength = Int32.Parse(Console.ReadLine());
+            int[] numArray = new int[arrayLength];
+            int missingNumber = -1;
 
+            Console.WriteLine($"Enter all all the numbers from 1 - {arrayLength} except one number that you should replace with a 0");
+            Console.WriteLine("Please enter one number per line");
+
+            for (int i = 1; i <= arrayLength; i++)
+            {
+                Console.Write($"{i}: ");
+                int input = Int32.Parse(Console.ReadLine());
+                numArray[i - 1] = input;
+            }
+            Array.Sort(numArray);
+            switch (numArray[0])
+            {
+                case 0:
+                    if (numArray.Length == 2) { missingNumber = 2; break; }  
+                        for (int i = 0; i <= arrayLength; i++)
+                    {
+                        if (i != numArray[i]) { missingNumber = i; break; }
+                    }
+                    break;
+                case 1:
+                    for (int i = 1; i <= arrayLength; i++)
+                    {
+                        if (i != numArray[i-1]) { missingNumber = i; break; }
+                    }
+                    break;
+            }
+            
+
+            Console.WriteLine($"The number missing from the array is: {missingNumber}");
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
         }
         #endregion
 
