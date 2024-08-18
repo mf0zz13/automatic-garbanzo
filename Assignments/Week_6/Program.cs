@@ -5,6 +5,7 @@ namespace WeekSixAssignments
     internal class Program
     {
         public static CustomLinkedList linkedList = new();
+        public static CustomStack<int> stack = new CustomStack<int>(10);
         public static Dictionary<Displays.Menus, (string, string, string, string, string)> MenuOptions = new Dictionary<Displays.Menus, (string, string, string, string, string)>();
         public static void Initialize()
         {
@@ -13,7 +14,7 @@ namespace WeekSixAssignments
             MenuOptions.Add(Displays.Menus.Six_One, ("Part One", "Part Two", "Part Three", null, null));
             MenuOptions.Add(Displays.Menus.SixOne_One, ("Add House", "Remove House", "Search House", null, null));
             MenuOptions.Add(Displays.Menus.Six_Two, ("Part One", "Part Two", null, null, null));
-            MenuOptions.Add(Displays.Menus.SixTwo_One, ("Set Stack Length", "Add Item to Stack", "Remove Item from Stack", "See Top Item On Stack", "See All Items In Stack"));
+            MenuOptions.Add(Displays.Menus.SixTwo_One, ("Add Item to Stack", "Remove Item from Stack", "See Top Item On Stack", "See All Items In Stack", null));
             MenuOptions.Add(Displays.Menus.SixThree, ("Add Customer to Queue", "Call next Customer", null, null, null));
             MenuOptions.Add(Displays.Menus.SixChallenges, ("Challenge One", "Challenge Two", null, null, null));
             #endregion
@@ -70,6 +71,8 @@ namespace WeekSixAssignments
                             case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_One); break;
                             case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_One); break;
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(1); break;
+                            case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_One); break;
+                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(1); break;
                         }
                         break;
                     case 2:
@@ -77,6 +80,9 @@ namespace WeekSixAssignments
                         {
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(2); break;
                             case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Two); AssignmentSixOne_Two(); break;
+                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_Two); break;
+                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(2); break;
+                            case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_Two); AssignmentSixTwo_Two(); break;
                         }
                         break;
                     case 3:
@@ -84,6 +90,13 @@ namespace WeekSixAssignments
                         {
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(3); break;
                             case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Three); AssignmentSixOne_Three(); break;
+                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(3); break;
+                        }
+                        break;
+                    case 4:
+                        switch(option)
+                        {
+                            case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(4); break;
                         }
                         break;
 
@@ -365,10 +378,106 @@ namespace WeekSixAssignments
 
         #endregion
 
-        static void AssignmentSixTwo()
+        #region SixTwo
+        static void AssignmentSixTwo_One(int userInput)
         {
+            switch (userInput)
+            {
+                case 1:
+                    Console.Write("Enter a number to add to stack: ");
+                    stack.Push(ValidateNumInput(Console.ReadLine()));
+                    break;
+                case 2:
+                    stack.Pop();
+                    break;
+                case 3:
+                    stack.Peek();
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                    break;
+                case 4:
+                    stack.Display();
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                    break;
 
+            }
         }
+
+        #region SixTwo_One Methods
+        public static int ValidateNumInput(string input)
+        {
+            int returnVal;
+
+            if (input == "EXIT") { return -1; }
+            bool validInput = Int32.TryParse(input, out returnVal);
+
+            while (!validInput)
+            {
+                Console.WriteLine("Please enter a number");
+                Console.Write("Input not recognized please try again: ");
+                input = Console.ReadLine();
+                validInput = Int32.TryParse(input, out returnVal);
+            }
+
+            return returnVal;
+        }
+        #endregion
+
+        static void AssignmentSixTwo_Two()
+        {
+            int[] inputArray;
+            bool validInput = false;
+            while (!validInput)
+            {
+                try
+                {
+                    Console.WriteLine("Please enter the numbers you would like to add to the array separated by commas");
+                    inputArray = Console.ReadLine().Split(',').Select(Int32.Parse).ToArray();
+                    validInput = true;
+
+                    CalculateProducts(inputArray);
+                    Console.Write($"[{inputArray[0]}, ");
+                    for (int i = 1; i < inputArray.Length - 1; i++)
+                    {
+                        Console.Write($"{inputArray[i]}, ");
+                    }
+                    Console.WriteLine($"{inputArray[inputArray.Length - 1]}]");
+                    Console.WriteLine("Press any key to exit");
+                    Console.ReadKey();
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Enter only numbers separated by commas");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        #region SixTwo_Two Methods
+        public static void CalculateProducts(int[] numArray)
+        {
+            Stack<int> numbersForwards = new Stack<int>();
+
+            int priorSum = 1;
+            for (int i = 0; i < numArray.Length; i++)
+            {
+                numbersForwards.Push(priorSum);
+                priorSum *= numArray[i];
+            }
+
+            priorSum = 1;
+            for (int i = numArray.Length - 1; i >= 0; i--)
+            {
+                int tempNum = numArray[i];
+                numArray[i] = numbersForwards.Pop() * priorSum;
+                priorSum *= tempNum;
+            }
+        }
+        #endregion
+        #endregion
 
         static void AssignmentSixThree()
         {
@@ -652,6 +761,76 @@ namespace WeekSixAssignments
             _houseNumber = houseNumber;
             _address = address;
             _type = houseType;
+        }
+        #endregion
+    }
+
+    public class CustomStack<T>
+    {
+        #region Fields
+        private T[] _internalArray;
+        int _top = -1;
+        #endregion
+
+        #region Properties
+        public T Top
+        { get => _internalArray[_top]; }
+
+        public bool Empty
+        { get => IsEmpty(); }
+
+        public bool Full
+        { get => IsFull(); }
+        #endregion
+
+        #region Constructor
+        public CustomStack(int size)
+        {
+            _internalArray = new T[size];
+        }
+        #endregion
+
+        #region Methods
+        public bool IsEmpty()
+        {
+            if (_top == -1) { Console.WriteLine("Stack is empty"); return true; }
+            return false;
+        }
+
+        public bool IsFull()
+        {
+            if (_top == _internalArray.Length) { Console.WriteLine("Stack is full"); return true; }
+            return false;
+        }
+
+        public void Push(T item)
+        {
+            if (IsFull()) { return; }
+            _top++;
+            _internalArray[_top] = item;
+        }
+
+        public void Pop()
+        {
+            if (IsEmpty()) { return; }
+            _top--;
+        }
+
+        public void Peek()
+        {
+            if (IsEmpty()) { return; }
+            Console.WriteLine(_internalArray[_top]);
+        }
+
+        public void Display()
+        {
+            int counter = _top + 1;
+            Console.WriteLine("Stack:");
+            for (int i = _top; i >= 0; i--)
+            {
+                Console.WriteLine($"\t{counter}: {_internalArray[i]}");
+                counter--;
+            }
         }
         #endregion
     }
