@@ -76,14 +76,14 @@ namespace WeekSixAssignments
                         switch (option)
                         {
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(2); break;
-
-
+                            case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Two); AssignmentSixOne_Two(); break;
                         }
                         break;
                     case 3:
                         switch (option)
                         {
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(3); break;
+                            case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Three); AssignmentSixOne_Three(); break;
                         }
                         break;
 
@@ -254,17 +254,114 @@ namespace WeekSixAssignments
         }
         #endregion
 
-
-
         static void AssignmentSixOne_Two()
         {
+            int[] nums = new int[6];
+            int[] nums2 = new int[3];
+            int[] nums3 = new int[6];
 
+            Console.WriteLine("This is a demonstration of the LinkedList<T> class");
+            Console.WriteLine();
+            Console.WriteLine("LinkedList<int> ll = new();");
+            LinkedList<int> ll = new();
+            Console.WriteLine("ll.AddFirst(1);");
+            ll.AddFirst(1);
+            Console.WriteLine("ll.AddLast(10);");
+            ll.AddLast(10);
+            Console.WriteLine("ll.AddFirst(2);");
+            ll.AddFirst(2);
+            Console.WriteLine("ll.AddLast(9);");
+            ll.AddLast(9);
+            Console.WriteLine("ll.AddBefore(ll.Last, 15);");
+            ll.AddBefore(ll.Last, 15);
+            Console.WriteLine("ll.AddAfter(ll.First, 5);");
+            ll.AddAfter(ll.First, 5);
+            Console.WriteLine("ll.CopyTo(nums, 0);");
+            ll.CopyTo(nums, 0);
+            Console.WriteLine("foreach (int num in nums) { Console.WriteLine(num); }");
+            Console.WriteLine();
+            foreach (int num in nums) { Console.WriteLine(num); }
+            Console.WriteLine();
+            Console.WriteLine("ll.RemoveFirst();");
+            ll.RemoveFirst();
+            Console.WriteLine("ll.RemoveLast();");
+            ll.RemoveLast();
+            Console.WriteLine("ll.Remove(10);");
+            ll.Remove(10);
+            Console.WriteLine("ll.CopyTo(nums2, 0);");
+            ll.CopyTo(nums2, 0);
+            Console.WriteLine("foreach (int num in nums2) { Console.WriteLine(num); }");
+            Console.WriteLine();
+            foreach (int num in nums2) { Console.WriteLine(num); }
+            Console.WriteLine();
+            Console.WriteLine("ll.Clear();");
+            ll.Clear();
+            Console.WriteLine("Console.WriteLine(ll.Count);");
+            Console.WriteLine(ll.Count);
+            Console.WriteLine();
+            Console.WriteLine("Hit any key to exit");
+            Console.ReadKey();
         }
 
         static void AssignmentSixOne_Three()
         {
+            int[] numArray = new int[0];
+            bool validInput = false;
+            while (!validInput)
+            {
 
+                Console.WriteLine("Please enter a set of numbers separated by commas:");
+                string input = Console.ReadLine();
+
+                try { numArray = input.Split(',').Select(Int32.Parse).ToArray(); validInput = true; }
+                catch
+                {
+                    Console.WriteLine("Please only enter numbers separated by commas");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
+            }
+            Console.Write("Input: ");
+            OutputArray(numArray);
+
+            for (int i = 0; i < numArray.Length; i++)
+            {
+                switch (numArray[i])
+                {
+                    case 0:
+                        int tempCount = i;
+                        while (numArray[tempCount] == 0)
+                        {
+                            tempCount++;
+                            if (tempCount == numArray.Length) { break; }
+                        }
+                        if (tempCount == numArray.Length) { break; }
+                        numArray[i] = numArray[tempCount];
+                        numArray[tempCount] = 0;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.Write("Output: ");
+            OutputArray(numArray);
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
         }
+
+        #region Methods 6.1_3
+        static void OutputArray(int[] array)
+        {
+            int counter = 0;
+            foreach (int item in array)
+            {
+                if (counter == 0) { Console.Write($"[{item}, "); }
+                else if (counter == array.Length - 1) { Console.WriteLine($"{item}]"); }
+                else { Console.Write($"{item}, "); }
+                counter++;
+            }
+        }
+        #endregion
 
         #endregion
 
