@@ -6,6 +6,7 @@ namespace WeekSixAssignments
     {
         public static CustomLinkedList linkedList = new();
         public static CustomStack<int> stack = new CustomStack<int>(10);
+        public static CustomQueue queue = new CustomQueue();
         public static Dictionary<Displays.Menus, (string, string, string, string, string)> MenuOptions = new Dictionary<Displays.Menus, (string, string, string, string, string)>();
         public static void Initialize()
         {
@@ -73,6 +74,7 @@ namespace WeekSixAssignments
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(1); break;
                             case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_One); break;
                             case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(1); break;
+                            case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(1);  break;
                         }
                         break;
                     case 2:
@@ -83,6 +85,7 @@ namespace WeekSixAssignments
                             case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_Two); break;
                             case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(2); break;
                             case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_Two); AssignmentSixTwo_Two(); break;
+                            case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(2); break;
                         }
                         break;
                     case 3:
@@ -91,10 +94,11 @@ namespace WeekSixAssignments
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(3); break;
                             case Displays.Menus.Six_One: MenuSwitch(Displays.Menus.SixOne_Three); AssignmentSixOne_Three(); break;
                             case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(3); break;
+                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixThree); break;
                         }
                         break;
                     case 4:
-                        switch(option)
+                        switch (option)
                         {
                             case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(4); break;
                         }
@@ -479,9 +483,18 @@ namespace WeekSixAssignments
         #endregion
         #endregion
 
-        static void AssignmentSixThree()
+        static void AssignmentSixThree(int userInput)
         {
-
+            switch (userInput)
+            {
+                case 1:
+                    Console.WriteLine("Enter customer name: ");
+                    queue.Enqueue(Console.ReadLine());
+                    break;
+                case 2:
+                    queue.Dequeue();
+                    break;
+            }
         }
 
         static void AssignmentSixFour()
@@ -833,6 +846,48 @@ namespace WeekSixAssignments
             }
         }
         #endregion
+    }
+
+    public class CustomQueue
+    {
+        private string _currentCustomer;
+        LinkedList<string> _linkedList = new LinkedList<string>();
+
+        public CustomQueue()
+        {
+            LinkedList<string> _linkedList = new LinkedList<string>();
+            _currentCustomer = "";
+        }
+
+        public void Enqueue(string name)
+        {
+            if (_linkedList.Count == 0) { _linkedList.AddFirst(name); _currentCustomer = ""; }
+            else { _linkedList.AddLast(name); }
+        }
+
+        public void Dequeue()
+        {
+            _currentCustomer = _linkedList.First.Value.ToString();
+            _linkedList.RemoveFirst();
+        }
+
+        public void Display()
+        {
+            Console.WriteLine($"" +
+            $"Now Serving: {_currentCustomer}\n" +
+            $"           Customers Waiting\n" +
+            $"+======================================+\n");
+
+            LinkedListNode<string> name = _linkedList.First;
+            for (int i = 0; i < _linkedList.Count; i++)
+            {
+                if (name != null)
+                {
+                    Console.WriteLine($"{i + 1}: {name.Value.ToString()}");
+                }
+                name = name.Next;
+            }
+        }
     }
 }
 
