@@ -75,6 +75,7 @@ namespace WeekSixAssignments
                             case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_One); break;
                             case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(1); break;
                             case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(1); break;
+                            case Displays.Menus.SixChallenges: MenuSwitch(Displays.Menus.SixChallenge_One); AssignmentSixChallenge_One(); break;
                         }
                         break;
                     case 2:
@@ -104,9 +105,15 @@ namespace WeekSixAssignments
                             case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixFour); AssignmentSixFour(); break;
                         }
                         break;
-                    case -1:
-                        exit = true;
+                    case 5:
+                        switch (option)
+                        {
+                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixChallenges); break;
+                        }
                         break;
+                    case -1:
+                    exit = true;
+                    break;
                 }
             }
         }
@@ -523,10 +530,35 @@ namespace WeekSixAssignments
         #endregion
         #endregion
 
-        static void AssignmentSixChallengeLabs()
+        #region Challenges
+        static void AssignmentSixChallenge_One()
+        {
+            int[] userInput = new int[9];
+            Dictionary<int, int> nums = new Dictionary<int, int>();
+            int currVal = 0;
+            Console.WriteLine("Enter a nine digit array that has every element apperaing twice except one");
+            Console.WriteLine("Please enter one number per line");
+
+            for (int i = 1; i < 10; i++)
+            {
+                Console.Write($"{i}: ");
+                int input = Int32.Parse(Console.ReadLine());
+                userInput[i - 1] = input;
+                if (nums.ContainsKey(input)) { nums.TryGetValue(input, out currVal); nums[input] = currVal + 1; }
+                else { nums.Add(input, 1); }
+            }
+
+            Console.WriteLine($"The number you only entered once is: {nums.FirstOrDefault(x => x.Value == 1).Key}");
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
+        }
+
+        static void AssignmentSixChallenge_Two()
         {
 
         }
+        #endregion
+
         static void Main(string[] args)
         {
             Initialize();
