@@ -10,15 +10,6 @@ namespace WeekSixAssignments
 
         public static int Display(Menus menu)
         {
-            Dictionary<Displays.Menus, (string, string, string, string, string)> MenuOptions = new Dictionary<Displays.Menus, (string, string, string, string, string)>();
-            MenuOptions.Add(Menus.Main, ("Assignment 6.1", "Assignment 6.2", "Assignment 6.3", "Assignment 6.4", "Week 6 Challenges"));
-            MenuOptions.Add(Menus.Six_One, ("Part One", "Part Two", "Part Three", null, null));
-            MenuOptions.Add(Menus.SixOne_One, ("Add House", "Remove House", "Search House", null, null));
-            MenuOptions.Add(Menus.Six_Two, ("Part One", "Part Two", null, null, null));
-            MenuOptions.Add(Menus.SixTwo_One, ("Set Stack Length", "Add Item to Stack", "Remove Item from Stack", "See Top Item On Stack", "See All Items In Stack"));
-            MenuOptions.Add(Menus.SixThree, ("Add Customer to Queue", "Call next Customer", null, null, null));
-            MenuOptions.Add(Menus.SixChallenges, ("Challenge One", "Challenge Two", null, null, null));
-            
             bool exit = false;
             
             int returnNum = -1;
@@ -75,9 +66,9 @@ namespace WeekSixAssignments
                     Console.ForegroundColor = ConsoleColor.Green;
                     int exitNum = 1;
 
-                    if (MenuOptions.ContainsKey(menu))
+                    if (Program.MenuOptions.ContainsKey(menu))
                     {
-                        ITuple menuOptions = MenuOptions[menu] as ITuple;
+                        ITuple menuOptions = Program.MenuOptions[menu] as ITuple;
 
                         for (int i = 1; i <= menuOptions.Length; i++)
                         {

@@ -5,10 +5,20 @@ namespace WeekSixAssignments
     internal class Program
     {
         public static CustomLinkedList linkedList = new();
-
+        public static Dictionary<Displays.Menus, (string, string, string, string, string)> MenuOptions = new Dictionary<Displays.Menus, (string, string, string, string, string)>();
         public static void Initialize()
         {
-            #region TestData
+            #region MenuOptions KVPs
+            MenuOptions.Add(Displays.Menus.Main, ("Assignment 6.1", "Assignment 6.2", "Assignment 6.3", "Assignment 6.4", "Week 6 Challenges"));
+            MenuOptions.Add(Displays.Menus.Six_One, ("Part One", "Part Two", "Part Three", null, null));
+            MenuOptions.Add(Displays.Menus.SixOne_One, ("Add House", "Remove House", "Search House", null, null));
+            MenuOptions.Add(Displays.Menus.Six_Two, ("Part One", "Part Two", null, null, null));
+            MenuOptions.Add(Displays.Menus.SixTwo_One, ("Set Stack Length", "Add Item to Stack", "Remove Item from Stack", "See Top Item On Stack", "See All Items In Stack"));
+            MenuOptions.Add(Displays.Menus.SixThree, ("Add Customer to Queue", "Call next Customer", null, null, null));
+            MenuOptions.Add(Displays.Menus.SixChallenges, ("Challenge One", "Challenge Two", null, null, null));
+            #endregion
+
+            #region 6.1.1 TestData
             House h1 = new(1234, "Cedar Road", HouseType.Ranch);
             House h2 = new(6847, "Maple Avenue", HouseType.Craftsman);
             House h3 = new(9641, "Oak Street", HouseType.TownHouse);
@@ -279,6 +289,7 @@ namespace WeekSixAssignments
         }
         static void Main(string[] args)
         {
+            Initialize();
             MenuSwitch(Displays.Menus.Main);
         }
 
@@ -355,7 +366,7 @@ namespace WeekSixAssignments
             if (_size == 0) { _head = _tempNode; _size++; return; }
             _currNode = _head;
 
-            while (_currNode.Next != null) 
+            while (_currNode.Next != null)
             {
                 _currNode = _currNode.Next;
             }
