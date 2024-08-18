@@ -74,7 +74,7 @@ namespace WeekSixAssignments
                             case Displays.Menus.SixOne_One: AssignmentSixOne_One(1); break;
                             case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_One); break;
                             case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(1); break;
-                            case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(1);  break;
+                            case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(1); break;
                         }
                         break;
                     case 2:
@@ -101,32 +101,9 @@ namespace WeekSixAssignments
                         switch (option)
                         {
                             case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(4); break;
+                            case Displays.Menus.Main: MenuSwitch(Displays.Menus.SixFour); AssignmentSixFour(); break;
                         }
                         break;
-
-                    //            AssignmentSixTwo();
-                    //            break;
-                    //        case 3:
-                    //            switch (opiton)
-                    //            {
-                    //              break;
-                    //    }
-                    //    AssignmentSixThree();
-                    //    break;
-                    //        case 4:
-                    //        switch (opiton)
-                    //        {
-                    //                 break
-                    //            }
-                    //    AssignmentSixFour();
-                    //    break;
-                    //        case 5:
-                    //        switch (opiton)
-                    //        {
-                    //                break;
-                    //    }
-                    //    AssignmentSixChallengeLabs();
-                    //    break;
                     case -1:
                         exit = true;
                         break;
@@ -483,6 +460,7 @@ namespace WeekSixAssignments
         #endregion
         #endregion
 
+        #region SixThree
         static void AssignmentSixThree(int userInput)
         {
             switch (userInput)
@@ -496,11 +474,54 @@ namespace WeekSixAssignments
                     break;
             }
         }
+        #endregion
 
+        #region SixFour
         static void AssignmentSixFour()
         {
+            int[,] matrix = new int[,] { { 5, 1, 9, 11 }, { 2, 4, 8, 10 }, { 13, 3, 6, 7 }, { 15, 14, 12, 16 } };
 
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"\t{matrix[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n\n");
+            RotateMatrix(matrix);
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"\t{matrix[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\nPress any key to exit");
+            Console.ReadKey();
         }
+
+        #region SixFour Methods
+        public static void RotateMatrix(int[,] matrix)
+        {
+            int length = matrix.GetLength(0) - 1;
+            for (int i = 0; i < (length + 1) / 2; i++)
+            {
+                for (int j = 0 + i; j < length - i; j++)
+                {
+                    int tempNum = matrix[i, j];
+                    matrix[i, j] = matrix[length - j, i];
+                    matrix[length - j, i] = matrix[length - i, length - j];
+                    matrix[length - i, length - j] = matrix[j, length - i];
+                    matrix[j, length - i] = tempNum;
+
+                }
+            }
+        }
+        #endregion
+        #endregion
 
         static void AssignmentSixChallengeLabs()
         {
