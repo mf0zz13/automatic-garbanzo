@@ -89,7 +89,7 @@ namespace WeekSixAssignments
                                 case Displays.Menus.Main: MenuSwitch(Displays.Menus.Six_Two); break;
                                 case Displays.Menus.SixTwo_One: AssignmentSixTwo_One(2); break;
                                 case Displays.Menus.Six_Two: MenuSwitch(Displays.Menus.SixTwo_Two); AssignmentSixTwo_Two(); break;
-                                case Displays.Menus.SixThree: queue.Display(); AssignmentSixThree(2); break;
+                                case Displays.Menus.SixThree: AssignmentSixThree(2); break;
                                 case Displays.Menus.SixChallenges: MenuSwitch(Displays.Menus.SixChallenge_Two); AssignmentSixChallenge_Two(); break;
                             }
                             break;
@@ -484,6 +484,9 @@ namespace WeekSixAssignments
                     break;
                 case 2:
                     queue.Dequeue();
+                    queue.Display();
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
                     break;
             }
         }
