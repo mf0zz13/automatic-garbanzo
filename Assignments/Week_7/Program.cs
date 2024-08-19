@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace WeekSevenAssignments
 {
-    private class Program
+    internal class Program
     { 
         static void Main(string[] args)
         {
-
+            Displays.Initialize();
+            Displays.Display();
         }
     }
 }
