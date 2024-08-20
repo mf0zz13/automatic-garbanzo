@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace WeekSevenAssignments
 {
-    public enum DisplayWindows { Main, SevenOne, SevenOneOne, SevenOneTwo, SevenTwo, SevenTwoOne, SevenTwoTwo, SevenTwoThree };
+    public enum DisplayWindows { Main, SevenOne, SevenOneOne, SevenOneTwo, SevenTwo, SevenTwoOne, SevenTwoTwo, SevenTwoThree, SevenThree, SevenFour };
 
     public class Displays
     {
@@ -51,10 +51,13 @@ namespace WeekSevenAssignments
                                         Display(DisplayWindows.SevenOne);
                                         break;
                                     case 2:
+                                        Display(DisplayWindows.SevenTwo);
                                         break;
                                     case 3:
+                                        Display(DisplayWindows.SevenThree);
                                         break;
                                     case 4:
+                                        Display(DisplayWindows.SevenFour);
                                         break;
                                     case 5:
                                         exit = true;
@@ -79,12 +82,16 @@ namespace WeekSevenAssignments
                                 switch (userInput)
                                 {
                                     case 1:
+                                        Display(DisplayWindows.SevenTwoOne);
                                         break;
                                     case 2:
+                                        Display(DisplayWindows.SevenTwoTwo);
                                         break;
                                     case 3:
+                                        Display(DisplayWindows.SevenTwoThree);
                                         break;
                                     case 4:
+                                        exit = true;
                                         break;
                                 }
                                 break;
@@ -123,12 +130,15 @@ namespace WeekSevenAssignments
                     break;
                 case DisplayWindows.SevenTwoOne:
                     SevenTwoTitles(1);
+                    AssignmentSevenTwo.PartOne();
                     break;
                 case DisplayWindows.SevenTwoTwo:
                     SevenTwoTitles(2);
+                    AssignmentSevenTwo.PartTwo();
                     break;
                 case DisplayWindows.SevenTwoThree:
                     SevenTwoTitles(3);
+                    AssignmentSevenTwo.PartThree();
                     break;
             }
         }

@@ -27,7 +27,7 @@ namespace WeekSevenAssignments
                         {
                             Console.Write($"{i}: ");
                             intArray[i - 1] = Int32.Parse(Console.ReadLine());
-                            
+
                         }
                         validInputs = true;
                     }
@@ -58,6 +58,31 @@ namespace WeekSevenAssignments
                 { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
                 return output;
+            }
+        }
+
+        internal static class Strings
+        {
+            public static string GetWord()
+            {
+                bool validInput = false;
+                string input = "";
+                while (!validInput)
+                {
+                    try
+                    {
+                        input = Console.ReadLine();
+
+                        foreach (char c in input)
+                        {
+                            if (!Char.IsLetter(c)) { throw new ArgumentOutOfRangeException("Words must consist of only letters"); }
+                        }
+                        validInput = true;
+                    }
+                    catch (Exception e)
+                    { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }
+                return input;
             }
         }
     }
