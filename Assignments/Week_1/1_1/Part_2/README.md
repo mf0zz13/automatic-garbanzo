@@ -1,1 +1,0 @@
-Create a simple console application and declare basic datatypes like int, float, decimal, double and print their min and max values.

@@ -1,1 +1,0 @@
-Create a simple console application and store your name, age (should take decimal), address in a string variable and print them back on console. Prompt the user to each time enter name, age and address.
