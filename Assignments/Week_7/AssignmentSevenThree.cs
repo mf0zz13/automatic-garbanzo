@@ -23,7 +23,7 @@ namespace WeekSevenAssignments
 
             tree.Search(searchNum,tree.Root);
 
-            Console.WriteLine("Press any key to exit");
+            Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();
         }
     }
@@ -120,7 +120,7 @@ namespace WeekSevenAssignments
             {
                 if (val < root.Data) { Search(val, root.LessThan); }
                 else if (val > root.Data) { Search(val, root.MoreThan); }
-                else if (val == root.Data) { Console.Write($"{val} is in tree, its subtree consists of "); this.InOrder(root); }
+                else if (val == root.Data) { Console.Write($"{val} is in tree, its subtree consists of "); InOrder(root); }
             }
             if (root == null) { Console.WriteLine($"{val} is not in tree"); }
 
