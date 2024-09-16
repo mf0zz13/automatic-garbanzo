@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            int[] scores = [1, 2, 3, 5];
-            int[] ages = [8, 9, 10, 1];
+            int[] scores = [4, 5, 6, 5];
+            int[] ages = [2, 1, 2, 1];
 
             Console.WriteLine(HighScore(scores, ages));
             Console.ReadKey();
@@ -18,7 +18,7 @@
 
             for (int i = 0; i < scores.Length; i++)
             {
-                players.Add((ages[i], scores[i]));
+                players.Add((scores[i], ages[i]));
             }
 
             players = players.OrderBy(player => player.dp)
@@ -26,13 +26,13 @@
                 .Select(player => (player.scores, player.scores))
                 .ToList<(int scores, int dp)>();
 
-            for (int i = 1; i < players.Count; i++)
+            for (int i = 0; i < players.Count; i++)
             {
                 foreach ((int score, int dp) player in players[..i])
                 {
                     if (player.score <= players[i].scores)
                     {
-                        players[i].dp = Math.Max(player.dp + players[i].scores, players[i].dp);
+                        players[i] = (players[i].scores, Math.Max(player.dp + players[i].scores, players[i].dp));
                     }
                 }
             }
